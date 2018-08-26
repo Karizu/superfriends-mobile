@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_article">
+        <TextView
+            android:id="@+id/article_detail_text_artikel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5F0709"
+            android:textAlignment="center"
+            android:textColor="@color/colorTitleText"
+            android:text="Artikel"/>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardBackgroundColor="#33ffffff"
+            android:elevation="0dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:background="@drawable/logo_sidebar">
+
+            </ImageView>
+        </android.support.v7.widget.CardView>
+        <TextView
+            android:id="@+id/article_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_article_title"
+            android:textColor="@color/colorTitleText"
+            android:gravity="center"
+            android:text="Manfaat Menurunkan Berat Badan"/>
+        <TextView
+            android:id="@+id/article_detail_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/article_margin_left_right"
+            android:textColor="@color/colorNormalText"
+            android:text="@string/article_detail_example"/>
+    </LinearLayout>
+
+</ScrollView>
