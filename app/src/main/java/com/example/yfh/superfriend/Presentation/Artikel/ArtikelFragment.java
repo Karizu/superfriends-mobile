@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.yfh.superfriend.Service.AdapterListMenu;
+import com.example.yfh.superfriend.Service.AdapterListMenuArticle;
 import com.example.yfh.superfriend.Model.ArticleModel;
 import com.example.yfh.superfriend.R;
 
@@ -25,7 +25,7 @@ public class ArtikelFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_artikel, null);
+        return inflater.inflate(R.layout.fragment_article, null);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ArtikelFragment extends Fragment {
                     false);
             RecyclerView recyclerView = getView().findViewById(R.id.article_recycler_view);
             recyclerView.setLayoutManager(layoutManager);
-            RecyclerView.Adapter adapter = new AdapterListMenu(articleModels, activity);
+            RecyclerView.Adapter adapter = new AdapterListMenuArticle(articleModels, activity);
             recyclerView.setAdapter(adapter);
         }
     }

@@ -17,16 +17,16 @@
         <activity
             android:name=".Presentation.NavigationDrawer"
             android:label="@string/title_activity_navigation_drawer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Presentation.Login.LoginActivity"
             android:label="@string/title_activity_login">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
