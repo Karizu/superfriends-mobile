@@ -1,4 +1,4 @@
-package com.example.yfh.superfriend.Presentation.Artikel;
+package com.example.yfh.superfriend.Presentation.Article;
 
 
 import android.content.Context;
@@ -21,7 +21,7 @@ import com.example.yfh.superfriend.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArtikelFragment extends Fragment {
+public class ArticleFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

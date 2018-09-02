@@ -1,9 +1,6 @@
 package com.example.yfh.superfriend.Service;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yfh.superfriend.Model.ArticleModel;
-import com.example.yfh.superfriend.Presentation.Artikel.ArtikelDetailFragment;
 import com.example.yfh.superfriend.R;
 
 import java.util.List;

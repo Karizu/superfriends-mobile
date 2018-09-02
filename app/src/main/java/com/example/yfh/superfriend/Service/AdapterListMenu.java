@@ -1,7 +1,6 @@
 package com.example.yfh.superfriend.Service;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yfh.superfriend.Model.ArticleModel;
-import com.example.yfh.superfriend.Presentation.Artikel.ArtikelDetailFragment;
+import com.example.yfh.superfriend.Presentation.Article.ArticleDetailFragment;
 import com.example.yfh.superfriend.R;
 
 import java.util.List;
@@ -48,7 +47,7 @@ public class AdapterListMenu extends RecyclerView.Adapter<AdapterListMenu.ViewHo
 
             @Override
             public void onClick(View view) {
-                Fragment fragment = new ArtikelDetailFragment();
+                Fragment fragment = new ArticleDetailFragment();
                 FragmentManager fragmentManager = articleModel.getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

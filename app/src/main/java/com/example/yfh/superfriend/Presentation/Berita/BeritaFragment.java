@@ -1,14 +1,24 @@
 package com.example.yfh.superfriend.Presentation.Berita;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
+import com.example.yfh.superfriend.Model.ArticleModel;
 import com.example.yfh.superfriend.R;
+import com.example.yfh.superfriend.Service.AdapterListMenuHome;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BeritaFragment extends Fragment{
     @Nullable
@@ -20,5 +30,79 @@ public class BeritaFragment extends Fragment{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        new LoadDataRecyclerView().execute("");
     }
+
+    private class LoadDataRecyclerView extends AsyncTask<String, Void, List<ArticleModel>> {
+        protected List<ArticleModel> doInBackground(String... urls){
+            List<ArticleModel> articleModels = new ArrayList<>();
+            populateData(articleModels);
+
+            return articleModels;
+        }
+        protected void onPostExecute(List<ArticleModel> articleModels){
+            Context activity = getActivity();
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(activity,
+                    LinearLayout.VERTICAL,
+                    false);
+            RecyclerView recyclerView = getView().findViewById(R.id.news_recycle_view);
+            recyclerView.setLayoutManager(layoutManager);
+            RecyclerView.Adapter adapter = new AdapterListMenuHome(articleModels, activity);
+            recyclerView.setAdapter(adapter);
+        }
+    }
+
+    private void populateData(List<ArticleModel> articleModels){
+        articleModels.add(new ArticleModel("1",
+                "",
+                "Article 1",
+                "Artikel ini bercerita tentang artikel yang dibuat oleh sang pembuat artikel kenamaan di rumahnya yang berada nan jauh disana",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("2",
+                "",
+                "Penulis Artikel",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya. Penulis artikel perlu belajar lebih banyak agar bisa menghidupi pikirannya. Karena pikiran yang penuh pengetahuan itu adalah pikiran yang diperlukan oleh penulis artikel.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("3",
+                "",
+                "Sejarah Artikel",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("4",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("5",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("6",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("7",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("8",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("9",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+        articleModels.add(new ArticleModel("10",
+                "",
+                "Berita Terkini",
+                "Penulis artikel adalah penulis yang menggunakan sebuat tools, bisa berupa komputer, mesin tik, pena, dan lainnya.",
+                getFragmentManager()));
+    }
+
 }

@@ -14,7 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.yfh.superfriend.Presentation.Artikel.ArtikelFragment;
+import com.example.yfh.superfriend.Presentation.Article.ArticleFragment;
 import com.example.yfh.superfriend.Presentation.Berita.BeritaFragment;
 import com.example.yfh.superfriend.Presentation.Direktori.DirektoriFragment;
 import com.example.yfh.superfriend.Presentation.Diskusi.DiskusiFragment;
@@ -96,7 +96,7 @@ public class NavigationDrawer extends AppCompatActivity
         } else if (id == R.id.nav_direktori_anggota) {
             fragment = new DirektoriFragment();
         } else if (id == R.id.nav_artikel) {
-            fragment = new ArtikelFragment();
+            fragment = new ArticleFragment();
         } else if (id == R.id.nav_kalender_kegiatan) {
             fragment = new KalenderFragment();
         } else if (id == R.id.nav_setting) {

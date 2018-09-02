@@ -20,7 +20,7 @@
             android:weightSum="20">
 
             <LinearLayout
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -77,7 +77,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="16"
+                android:layout_weight="15"
                 android:layout_width="0dp"
                 android:layout_height="match_parent">
 
@@ -126,7 +126,7 @@
                                 android:id="@+id/title_home_card_view"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textSize="10dp"
+                                android:textSize="14dp"
                                 android:textColor="@color/colorTitleText"
                                 android:text="Mobile Legend"/>
 
@@ -135,7 +135,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
-                                android:textSize="7dp"
+                                android:textSize="10dp"
                                 android:textColor="@color/colorText"
                                 android:text="Tentang permainan game mobile yang ada di indonesia"/>
                         </LinearLayout>
