@@ -7,4 +7,5 @@
     <color name="colorTitleText">#E0C97D</color>
     <color name="colorNormalText">#ffffff</color>
     <color name="colorCardViewBackground">#383838</color>
+    <color name="colorRegisterMember">#360507</color>
 </resources>
