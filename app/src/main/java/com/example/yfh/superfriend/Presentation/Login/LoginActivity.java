@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,11 +31,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.yfh.superfriend.Model.ArticleModel;
+import com.example.yfh.superfriend.Model.UserModel;
 import com.example.yfh.superfriend.Presentation.NavigationDrawer;
 import com.example.yfh.superfriend.R;
+import com.example.yfh.superfriend.api.ApiInterface;
+import com.rezkyatinnov.kyandroid.Kyandroid;
+import com.rezkyatinnov.kyandroid.localdata.LocalData;
+import com.rezkyatinnov.kyandroid.reztrofit.ErrorResponse;
+import com.rezkyatinnov.kyandroid.reztrofit.RestCallback;
+import com.rezkyatinnov.kyandroid.reztrofit.Reztrofit;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Headers;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -151,6 +162,47 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         if (mAuthTask != null) {
             return;
         }
+
+        Reztrofit<ApiInterface> service = Reztrofit.getInstance();
+        service.getEndpoint().login("admin","admin").enqueue(new RestCallback<UserModel>() {
+            @Override
+            public void onSuccess(Headers headers, UserModel body) {
+
+                Log.i("success",body.getUsername());
+
+            }
+
+            @Override
+            public void onFailed(ErrorResponse error) {
+
+            }
+
+            @Override
+            public void onCanceled() {
+
+            }
+        });
+
+
+
+
+//        service.getEndpoint().groupList(new ArticleModel()).enqueue(new RestCallback<List<ArticleModel>>() {
+//            @Override
+//            public void onSuccess(Headers headers, List<ArticleModel> body) {
+//                LocalData.saveOrUpdate(body.get(0));
+//
+//            }
+//
+//            @Override
+//            public void onFailed(ErrorResponse error) {
+//
+//            }
+//
+//            @Override
+//            public void onCanceled() {
+//
+//            }
+//        });
 
         Intent intent = new Intent(LoginActivity.this, NavigationDrawer.class);
         startActivity(intent);

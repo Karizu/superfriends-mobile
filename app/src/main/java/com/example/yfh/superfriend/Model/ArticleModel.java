@@ -2,9 +2,16 @@ package com.example.yfh.superfriend.Model;
 
 import android.support.v4.app.FragmentManager;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class ArticleModel {
 
-    private String id, srcImage, title, articleDetail;
+    @SerializedName("id")
+    @Expose
+    private String id;
+
+    private String srcImage, title, articleDetail;
 
     private FragmentManager fragmentManager;
 
