@@ -1,14 +1,19 @@
 package com.example.yfh.superfriend.Service;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.yfh.superfriend.Model.ArticleModel;
+import com.example.yfh.superfriend.Presentation.Article.ArticleDetailFragment;
 import com.example.yfh.superfriend.R;
 
 import java.util.List;
@@ -39,14 +44,31 @@ public class AdapterListMenuHome extends RecyclerView.Adapter<AdapterListMenuHom
         holder.imageView.setImageResource(imageResource);
         holder.textViewTitle.setText(articleModel.getTitle());
         holder.textViewDetail.setText(articleModel.getArticleDetail());
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ArticleDetailFragment();
+                FragmentManager fragmentManager = articleModel.getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.screen_area, fragment, "News Detail");
+                fragmentTransaction.addToBackStack("News Detail");
+
+                fragmentTransaction.commit();
+            }
+        });
+
+
     }
 
     @Override
     public int getItemCount(){ return articleModels.size();}
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
         public TextView textViewTitle;
         public TextView textViewDetail;
+        public LinearLayout linearLayout;
 
         public ViewHolder(View v){
             super(v);
@@ -54,6 +76,7 @@ public class AdapterListMenuHome extends RecyclerView.Adapter<AdapterListMenuHom
             imageView = (ImageView) v.findViewById(R.id.home_image_view);
             textViewTitle = (TextView) v.findViewById(R.id.title_home_card_view);
             textViewDetail = (TextView) v.findViewById(R.id.detail_home_card_view);
+            linearLayout = (LinearLayout) v.findViewById(R.id.layout_news);
         }
     }
 }

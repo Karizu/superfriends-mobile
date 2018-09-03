@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.yfh.superfriend.Model.ArticleModel;
@@ -43,7 +44,8 @@ public class AdapterListMenuArticle extends RecyclerView.Adapter<AdapterListMenu
         holder.imageView.setImageResource(imageResource);
         holder.textViewTitle.setText(articleModel.getTitle());
         holder.textViewArticle.setText(articleModel.getArticleDetail());
-        holder.imageView.setOnClickListener(new View.OnClickListener(){
+
+        holder.linearLayout.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
@@ -66,6 +68,7 @@ public class AdapterListMenuArticle extends RecyclerView.Adapter<AdapterListMenu
         public ImageView imageView;
         public TextView textViewTitle;
         public TextView textViewArticle;
+        public LinearLayout linearLayout;
 
         public ViewHolder(View v){
             super(v);
@@ -73,6 +76,7 @@ public class AdapterListMenuArticle extends RecyclerView.Adapter<AdapterListMenu
             imageView = (ImageView) v.findViewById(R.id.article_image_view);
             textViewTitle = (TextView) v.findViewById(R.id.article_title_text_view);
             textViewArticle = (TextView) v.findViewById(R.id.article_detail_text_view);
+            linearLayout = (LinearLayout) v.findViewById(R.id.layout_article);
         }
     }
 }
